@@ -7,4 +7,4 @@ An Android application to analyse the behaviour of a smartphone user based or hi
  patterns in human-smartphone interaction logs. 
 
 ## Developers:
-@Sreelal-c, @vimal-roy, Subanghi Jadav, Sisila OS
+Sisila OS, Sreelal C, Subanghi Jadav, Vimal Roy
