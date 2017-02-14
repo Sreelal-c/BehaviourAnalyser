@@ -1,0 +1,69 @@
+////////////////////////insert//////////////////////////
+try{
+				SQLiteDatabase sqd=openOrCreateDatabase("DBMS", SQLiteDatabase.CREATE_IF_NECESSARY,null);
+				sqd.setVersion(1);
+				sqd.setLocale(Locale.getDefault());
+				
+				String sql="create table if not exists gs(id Integer PRIMARY KEY AUTOINCREMENT,location text, name text,bluetooth text,wifi text,autosms text,sms text,silentmode text,block text)";
+				sqd.execSQL(sql);
+				
+				ContentValues cv=new ContentValues();
+				
+				cv.put("name",prname );
+				cv.put("location",location1 );
+				cv.put("bluetooth",bl);
+				cv.put("wifi",wi);
+				cv.put("autosms", aus);
+				cv.put("sms",message);
+				cv.put("silentmode", slm);
+				cv.put("block", bk);
+				
+				sqd.insert("gs", null,cv);
+				Toast.makeText(getApplicationContext(),"Profile is Created", Toast.LENGTH_LONG).show();
+				sqd.close();
+				
+				
+				}catch (Exception e) {
+					Log.d("errorcreated",e.getMessage());
+				}
+
+
+
+
+
+
+////////////////select//////////////////////////
+		try{
+			SQLiteDatabase sqd=openOrCreateDatabase("DBMS", SQLiteDatabase.CREATE_IF_NECESSARY,null);
+			sqd.setVersion(1);
+			sqd.setLocale(Locale.getDefault());
+			
+			String sql="create table if not exists gs(id Integer PRIMARY KEY AUTOINCREMENT,location text, name text,bluetooth text,wifi text,autosms text,sms text,silentmode text,block text)";
+			sqd.execSQL(sql);
+			Log.d("reached","11111");
+		
+		String query="select * from gs";
+		Cursor cr=sqd.rawQuery(query, null);
+		Log.d("counttt", cr.getCount()+"");
+		if(cr.getCount()!=0){
+			Log.d("reached","22222");
+			cr.moveToFirst();
+			do{
+				
+				id.add(cr.getString(0));
+				name.add(cr.getString(2));
+				location.add(cr.getString(1));
+				bl.add(cr.getString(3));
+				wi.add(cr.getString(4));
+				Log.d("reached","33333");
+				ausms.add(cr.getString(5));
+				sms.add(cr.getString(6));
+				slmd.add(cr.getString(7));
+				bk.add(cr.getString(8));
+				Log.d("reached","44444");
+			}while(cr.moveToNext());
+		}
+		sqd.close();
+		}catch (Exception e) {
+			Log.d("errorr", e.getMessage());
+		}
