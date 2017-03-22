@@ -3,8 +3,6 @@ An Android application to analyse the behaviour of a smartphone user based or hi
  Through our visual analytic tool, the potential individual smartphone usage patterns are revealed out easily. 
  These results will contribute to the smartphone designers, and human-behaviour experts. 
  Visualizations more successfully encourage users to explore their personal data.
- However, there are not many existing works taking advantage of visual analytics for analysing individual behaviour 
- patterns in human-smartphone interaction logs. 
 
 ## Developers:
 Sisila OS, Sreelal C, Subanghi Jadav, Vimal Roy
